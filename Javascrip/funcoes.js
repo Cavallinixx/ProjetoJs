@@ -72,53 +72,127 @@ function tabuada(){
 
 }//fim do método
 
-function potencia(){
-    var num1;
-    var num2;
-    i;
-    i++
-    
-    
 
+//Faça uma função para calcular potencia
+
+function potencia(){
+    var num1;//Declarando a variável
+    var num2;
+    var res;
+    //Coletando os dados dos campos
     num1 = parseInt(document.getElementById("tpNum").value);
     num2 = parseInt(document.getElementById("tsNum").value);
+    //Realizando o cálculo
 
-    var resNum1 = "Potencia do " + num1;
-    var resNum2= "Potencia do " + num2;
-
-    res = num1 * i;
-    for(i= 0; i <= num2; i++){
-
-        resNum1 += "\n" + num1 + " * " + i + " = " + (res);
-        resNum2 += "\n" + num2 + " * " + num2 + " = " + (res);
-
-    document.getElementById("resultado").innerHTML = "A potência de " + num1 + " é: "+ res ;
-    }
+    document.getElementById("resultado").innerHTML = "A potencia é: " + Math.pow(num1, num2);
 }
-
-
-function raiz(){
-    var num1;
-    var num2;
-
-
-    num1 = parseInt(documentElementById("tpNum").value);
-    num2 = parseInt(documentElementById("tsNum").value);
-
-    var resNum1 = "Raiz de " + num1;
-    var resNum2 = "Raiz de " + num2;
-
-    resNum1 +="\n" + num1 + ""
-
-
-    document.getElementById("resultado").innerHTML = "A raiz de " + num1 + " é: " + res;
-}
-//Faça uma função para calcular potencia
 
 //Faça uma função para calcular a raiz dos dois números 
 
+function raiz(){
+    var num1;//Declarando a variável
+
+    var res;
+    Math.sqrt(res);
+    
+    //Coletando os dados dos campos
+    num1 = parseInt(document.getElementById("tpNum").value);
+    //Realizando o cálculo
+    
+
+    document.getElementById("resultado").innerHTML = "A raiz de " + num1 + " é: "+ Math.sqrt(num1);
+    
+}
+
 //Faça uma função para calcular a formula de bhaskara
+
+function bhaskara(){
+    var a;
+    var b;
+    var c;
+    var delta;
+    var x1;
+    var x2;
+
+    a = parseInt(documentElementById("tpnum"). value);
+    b = parseInt(documentElementById("tsnum"). value);
+    c = parseInt(documentElementById("ttnum"). value);
+
+    //1º Calcular delta
+    delta =math.pow(b,2) - 4 * a * c;
+
+    //2ª Parte: Calcular x1 e x2 se delta não for negativo
+    if(delta >= 0){
+        x1 = (-b + math.sqrt(delta))/(2*a);
+        x2 = (-b - math.sqrt(delta))/(2*a);
+    }
+    else{
+        x1 = "Impossivel calcularx1, pois o delta pé negativo";
+        x2 = "Impossivel calcular x2, pois o delta é negativo";
+
+        //Mostrar na tela 
+        document.getElementById("resultado").innerHTML = "\nDelta" + delta + "\n\nX1: " + x1 + "\nX2: " + x2;
+    }
+}// fim do metodo
 
 //Faça um programa que peça ao usuario um numero e imprima se é par ou impar.
 
+function parImpar(){
+    var num1;
+    
+    num1 = parseInt(document.getElementById("tpNum").value);
+
+    if(num1 % 2 == 0)
+    {
+        res= " Par!"
+       
+    }
+    else{
+        res = " Impar!"
+       
+    }
+    
+
+document.getElementById("resultado").innerHTML =  "O número escolhido" + " é:"+ res;
+}
+
 //Faça um programa que peça ao usuario um numero e imprima se é positivo, negativo ou zero.
+
+function poNeZe(){
+    var num1;
+    var res;
+   
+    
+    num1 = parseInt(document.getElementById("tpNum").value);
+
+    if(num1 > 0){
+        res = " Positivo!";
+    }
+    if(num1 == 0){
+        res = " Zero!";
+    }
+    if(num1 < 0){
+        res = " Negativo!"
+    }
+
+document.getElementById("resultado").innerHTML = "O número escolhido" + " é:"+ res;
+   
+}
+
+// EXERCÍCIO 1 /Números de 1 a 10.
+
+function umDez(){
+    var res;
+    i = 0;
+    i = i++;
+    
+    do{
+      i = i++
+    }
+    while(i == 10);
+
+    
+    
+        document.getElementById("resultado").value = "\n" + resNum1 + "\n\n" + i;
+}
+
