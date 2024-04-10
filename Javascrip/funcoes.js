@@ -631,59 +631,127 @@ function primo(){
 
 //EXERCÍCIO 9/ Calcular fatorial do número.--------------------------------------
 
-function numFatorial(){
-    var num1;
-    i == 0;
-    var res;
-    num1 = parseInt(document.getElementById("tpNum").value);
+function numFatorial() {
+    var num = parseInt(document.getElementById("tpNum").value);
+    var resultado = 1; // Inicializa o resultado como 1
 
-    
-    if( i == num1){
-
-
+    // Calcula o fatorial de num
+    for (var i = 1; i <= num; i++) {
+        resultado *= i;
     }
 
+    // Exibe o resultado
+    var resultadoElemento = document.getElementById("resultado");
+    if (resultadoElemento) {
+        resultadoElemento.textContent = "O valor de " + num + "!"+ " é " + resultado;
+    } else {
+        console.error("O elemento com id 'resultado' não foi encontrado.");
+    }
 }
 
-//EXERCÍCIO 10/ Sequência do Fibonacci até o decimo termo.-------------------
+//EXERCÍCIO 10/ Sequência do Fibonacci até o decimo termo.
 
-function fibonacci(){
-    var i = 1; 
-    var num = 1;
-    var res;
+function fibonacci() {
+    var resultado = document.getElementById("resultado");
 
-    if(num <= 1){
-        res=(num <= 1);
-        return fibonacci(num-1) + fibonacci(num-2);
+    // Verifica se o elemento com id "resultado" existe
+    if (resultado) {
+        resultado.value = ""; 
+
+        var termo1 = 0;
+        var termo2 = 1;
+        var proximoTermo;
+
+        // Imprime os dois primeiros termos da sequência de Fibonacci
+        resultado.value += termo1 + ", " + termo2 + ", ";
+
+        // Calcula e imprime os próximos termos até o décimo
+        for (var i = 3; i <= 10; i++) {
+            proximoTermo = termo1 + termo2;
+            resultado.value += proximoTermo + ", ";
+            termo1 = termo2;
+            termo2 = proximoTermo;
+        }
+    } else {
+        console.error("O elemento com id 'resultado' não foi encontrado.");
     }
-    document.ElementById("resultado").innerHTML ="" + fibonacci;
 }
     
 
 //EXERCÍCIO 11/ Imprima os números pares e impares de 1 até o numero.
 
-function imprimirParImpar(){
+function imprimirParImpar() {
+    var num1 = parseInt(document.getElementById("tpNum").value);
+    var resultadoPar = ""; // String para armazenar os números pares
+    var resultadoImpar = ""; // String para armazenar os números ímpares
+
+    for (var i = 1; i <= num1; i++) {
+        if (i % 2 === 0) {
+            resultadoPar += i + " "; // Adiciona número par à string de resultados
+        } else {
+            resultadoImpar += i + " "; // Adiciona número ímpar à string de resultados
+        }
+    }
+
+    // Exibe os resultados
+    var resultadoElemento = document.getElementById("resultado");
+    if (resultadoElemento) {
+        resultadoElemento.innerText = "Os números pares são: " + resultadoPar + "\n" +
+                                       "Os números ímpares são: " + resultadoImpar;
+    } else {
+        console.error("O elemento com id 'resultado' não foi encontrado.");
+    }
+}
+
+//EXERCÍCIO 12/um número e imprima os números primos de 1 até esse número.
+
+
+function imprimirPrimosAteN(num) {
+    num1 = parseInt(document.getElementById("tpNum").value); 
+
+    var primos = "";
+
+    // Loop de 2 até o número fornecido
+    for (var i = 2; i <= num1; i++) {
+        var ehPrimo = true; // Assume que o número atual é primo
+
+        // Verifica se o número atual é divisível por qualquer número menor que ele mesmo
+        for (var j = 2; j < i; j++) {
+            if (i % j === 0) { // Se for divisível por outro número que não seja 1 e ele mesmo
+                ehPrimo = false; // Não é primo
+                break; // Sai do loop interno
+            }
+        }
+
+        // Se o número for primo, adiciona-o à string de primos
+        if (ehPrimo) {
+            primos += i + " ";
+        }
+    }
+
+    // Exibe os números primos na página
+    document.getElementById("resultado").value = "Números primos até " + num1 + ": " + primos;
+}
+
+//EXERCÍCIO 13/ Verificarse os números são perfeitos.
+function verificarNumeroPerfeito() {
     var num1;
-    var res;
+    num1 = parseInt(document.getElementById("tpNum").value); 
+    var somaDivisores = 0;
 
-    do{
-        if(num1 % 2 == 0)
-        {
-            res= " Par!"
-            num1 += i + " ";
+    // Loop para encontrar os divisores do número
+    for (var i = 1; i < num1; i++) {
+        if (num1 % i === 0) {
+            somaDivisores += i; // Adiciona o divisor à soma
         }
-        else{
-            res = " Impar!"
-        
-        }
-    }while(i <= num1) {
-        res += i + " ";
-        i++;
-    }//fim do while
+    }
 
-    
-    document.getElementById("resultado").innerText = "Os números são pares são: " + "\n" + num1;
-    
+    // Verifica se a soma dos divisores é igual ao próprio número
+    if (somaDivisores === num1) {
+        document.getElementById("resultado").value = num1 + " é um número perfeito!";
+    } else {
+        document.getElementById("resultado").value = num1 + " não é um número perfeito.";
+    }
 }
 
 
