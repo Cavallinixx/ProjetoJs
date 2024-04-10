@@ -5,32 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="../Javascrip/funcoes.js"></script>
+    <link rel="stylesheet" href="../CSS/estilo.css">
     <title>Página Principal</title>
 </head>
 <body>
-    <form>
-        <label name="pNum">Primeiro Número:</label> </label>
-        <input type="number" name="tpNum" id="tpNum"><br><br> 
-    
-        <label name="sNum">Segundo Número:</label> </label>
-        <input type="number" name="tsNum" id="tsNum"><br><br>
+        <form>
+            <label name="pNum">Primeiro Número:</label> </label>
+            <input type="number" name="tpNum" id="tpNum"><br><br> 
+                
+            <label name="sNum">Segundo Número:</label> </label>
+            <input type="number" name="tsNum" id="tsNum"><br><br>
 
-        <label name="tNum">Terceiro Número:</label> </label>
-        <input type="number" name="ttNum" id="ttNum"><br><br>
-    </form>
+            <label name="tNum">Terceiro Número:</label> </label>
+            <input type="number" name="ttNum" id="ttNum"><br><br>
+        </form>
 
-        <button type="submit" onclick="somar()"> + </button>
-        <button type="submit" onclick="subtrair()"> - </button>
-        <button type="submit"onclick="multiplicar()"> * </button>
-        <button type="submit"onclick="dividir()"> / </button> 
-        <button type="submit"onclick="tabuada()"> Tabuada </button>
-        <button type="submit"onclick="potencia()"> Potência </button>
-        <button type="submit"onclick="raiz()"> Raiz </button>
-        <button type="submit"onclick="bhaskara()"> Bhaskara </button>
-        <button type="submit"onclick="parImpar()"> Par Impar </button>
-        <button type="submit"onclick="poNeZe()"> Classificação do Número </button>
-        <button type="submit"onclick="umDez()"> 1 a 10 </button>
+        <div class="container">
 
-        <textarea id="resultado" rows="30" cols="30" readonly></textarea>
+            <button type="submit" onclick="somar()"> + </button>
+            <button type="submit" onclick="subtrair()"> - </button>
+            <button type="submit"onclick="multiplicar()"> * </button>
+            <button type="submit"onclick="dividir()"> / </button> <br><br>
+            <button type="submit"onclick="tabuada()"> Tabuada </button>
+            <button type="submit"onclick="potencia()"> Potência </button>
+            <button type="submit"onclick="raiz()"> Raiz </button>
+            <button type="submit"onclick="bhaskara()"> Bhaskara </button>
+            <button type="submit"onclick="parImpar()"> Par Impar </button>
+            <button type="submit"onclick="poNeZe()"> Classificação do Número </button>
+            <button type="submit"onclick="umDez()"> Contador um a dez </button>
+            <button type="submit"onclick="numPar()"> Números pares 1 a 20 </button>
+            <button type="submit"onclick="umACem()"> Soma de um a cem </button>
+            <button type="submit"onclick="umAteNum()"> Um até seu Número </button>
+            <button type="submit"onclick="multiplosCinco()"> Multiplicos de Cinco </button>
+            <button type="submit"onclick="calcularSoma()"> Soma até Número </button>
+            <button typ="submit"onclick="isPrime()"> Números Primos </button>
+            <button typ="submit"onclick="primo()"> Número Primos? </button>
+            <button typ="submit"onclick="fibonacci()"> Fibonacci </button>
+            <button typ="submit"onclick="imprimirParImpar()"> Par e Impar </button>
+            <textarea id="resultado" rows="30" cols="30" readonly></textarea>
+       </div> 
 </body>
 </html>
